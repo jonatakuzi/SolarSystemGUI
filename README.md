@@ -69,7 +69,7 @@ src/
  └── resources/
       └── images/   (optional: icons for stars/planets)
 
-      Technologies Used
+      Technologies used
 
 Java 17+
 
