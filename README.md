@@ -1,80 +1,42 @@
- Overview
+# SolarSystemGUI
 
-SolarSystemGUI is a modular Java Swing application that displays solar-system objects using a clean, event-driven GUI design.
-The project integrates:
+A Java Swing desktop application that displays an interactive solar system interface. Built around enum-based data modeling and event-driven GUI components to simulate a real-world dashboard layout.
 
-enum-based data modeling
+## Features
 
-Custom panels with Swing components (JFrame, JPanel, JButton, JTextArea, JTable)
+- **Enum-driven data** — planets and stars defined with attributes (mass, radius, description) directly in a Java enum
+- - **Interactive selection panel** — buttons update the active solar body in real time
+  - - **JTable facts panel** — scrollable table auto-populated from the enum data
+    - - **Description pane** — text area with line wrapping showing details for the selected body
+      - - **Timer animation** — periodic UI update cycle using `javax.swing.Timer`
+        - - **Composite layout** — `BorderLayout`, `FlowLayout`, and `BoxLayout` combined into a clean dashboard structure
+         
+          - ## Tech Stack
+         
+          - - Java 17+
+            - - Java Swing (`JFrame`, `JPanel`, `JButton`, `JTable`, `JTextArea`, `JScrollPane`)
+              - - `javax.swing.Timer` for animation
+                - - IntelliJ IDEA
+                 
+                  - ## Project Structure
+                 
+                  - ```
+                    SolarSystemGUI/
+                    ├── SolarSystemApp.java    # Main frame, layout assembly, event wiring
+                    ├── SolarSystemStar.java   # Enum defining solar bodies with attributes
+                    └── README.md
+                    ```
 
-A timer-based animation example
+                    ## Running the App
 
-User event handling with ActionListener
-
-A composite layout using BorderLayout, FlowLayout, and BoxLayout
-
-The application presents a visual “mini-framework” similar to a dashboard: a central display panel, a control panel of selectable stars/planets, and a fact/description panel.
-
- Features
- Solar System Enum
-
-Defines star/planet names
-
-Includes physical facts (e.g., mass, radius)
-
-Provides helper methods for easy lookup and integration
-
- Interactive Event Handling
-
-Buttons update the selected solar-system object
-
-Timer-based animation (Horstmann-style) for periodic updates
-
-Console or dialog feedback showing selected objects
-
- JTable Facts Panel
-
-Displays star/planet facts in a scrollable table
-
-Data automatically sourced from the enum
-
-Clean, readable layout
-
- Description Pane
-
-Text area with line wrapping enabled
-
-Displays a short description for the selected object
-
-Designed to fit neatly in the right-side info panel
-
-Modular GUI Structure
-
-Panels separated into reusable classes
-
-Makes the code ready for extension (e.g., images, calendars, etc.)
-
-Encourages scalable frontend design practices
-
- Project Structure
-src/
- ├── enums/
- │    └── SolarSystemStarEnum.java
- ├── ui/
- │    ├── StarPanel.java
- │    ├── InfoPanel.java
- │    ├── ControlPanel.java
- │    └── TablePanel.java
- ├── Main.java
- └── resources/
-      └── images/   (optional: icons for stars/planets)
-
-      Technologies used
-
-Java 17+
-
-Swing (JFrame, JPanel, JTable, JTextArea, Timer)
-
-Object-oriented design
-
-Event-driven programming 
+                    1. Clone the repo
+                    2. 2. Open in IntelliJ IDEA (or any Java IDE)
+                       3. 3. Run `SolarSystemApp.java`
+                         
+                          4. ## Concepts Demonstrated
+                         
+                          5. - Java enums with fields, constructors, and instance methods
+                             - - Swing layout managers composed into a multi-panel dashboard
+                               - - `ActionListener` for button-driven state updates
+                                 - - `TableModel` population from enum data
+                                   - - Timer-based periodic UI refresh pattern
